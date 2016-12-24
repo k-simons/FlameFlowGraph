@@ -1,0 +1,12 @@
+{
+  "name": "FlameFlowGraph",
+  "version": "1.0.0",
+  "description": "Flame graph flow chart",
+  "main": "index.html",
+  "repository": {
+    "url": "https://github.com/k-simons/FlameFlowGraph.git",
+    "type": "git"
+  },
+  "author": "Kevin Simons <ksimons@palantir.com>",
+  "license": "MIT"
+}
