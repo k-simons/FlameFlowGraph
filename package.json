@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Flame graph flow chart",
   "main": "index.html",
+  "scripts": {
+    "webpackServer": "webpack-dev-server --config webpack.config.js"
+  },
   "repository": {
     "url": "https://github.com/k-simons/FlameFlowGraph.git",
     "type": "git"
@@ -10,6 +13,7 @@
   "author": "Kevin Simons <ksimons@palantir.com>",
   "license": "MIT",
   "devDependencies": {
+    "html-webpack-plugin": "^2.24.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   }
