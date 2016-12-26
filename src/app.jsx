@@ -4,9 +4,10 @@
 // @flow
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { EXAMPLE } from "./example.js"
+import { EXAMPLE } from "./example"
+import { AppHome } from "./appHome.jsx"
 
 const appElement = document.getElementById("app");
 if (appElement != null && React != null) {
-    ReactDOM.render(<div>hello</div>, appElement);
+    ReactDOM.render(<AppHome message={"dsd4 message"}/>, appElement);
 }

@@ -4,6 +4,7 @@
   "description": "Flame graph flow chart",
   "main": "index.html",
   "scripts": {
+    "flowCheck": "./node_modules/flow-bin/cli.js check",
     "webpackServer": "webpack-dev-server --config webpack.config.js"
   },
   "repository": {

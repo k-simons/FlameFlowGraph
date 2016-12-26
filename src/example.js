@@ -435,13 +435,3 @@ export const EXAMPLE: Array<string> = [
 "unix`sys_syscall;genunix`syscall_mstate;unix`tsc_gethrtimeunscaled 59",
 "unix`sys_syscall;unix`atomic_add_64 205",
 ]
-
-function test(n: number) {
-    return n;
-}
-function test2(s: string) {
-    return s;
-}
-
-test(1);
-test2("1");
