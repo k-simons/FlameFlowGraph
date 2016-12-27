@@ -1094,6 +1094,17 @@ cytoscape:
   version "2.7.13"
   resolved "https://artifactory.palantir.build:443/artifactory/api/npm/all-npm/cytoscape/-/cytoscape-2.7.13.tgz#fa6a6c38e59e204050c04e3c757e95b217e71cd2"
 
+cytoscape-dagre:
+  version "1.3.0"
+  resolved "https://artifactory.palantir.build:443/artifactory/api/npm/all-npm/cytoscape-dagre/-/cytoscape-dagre-1.3.0.tgz#d66d362ae1ea733f60c2f0ffae5ffb06f1f612c7"
+
+dagre:
+  version "0.7.4"
+  resolved "https://artifactory.palantir.build:443/artifactory/api/npm/all-npm/dagre/-/dagre-0.7.4.tgz#de72f0e74a550ce11ce638f0a136fed712398022"
+  dependencies:
+    graphlib "^1.0.5"
+    lodash "^3.10.0"
+
 dashdash@^1.12.0:
   version "1.14.1"
   resolved "https://artifactory.palantir.build:443/artifactory/api/npm/all-npm/dashdash/-/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
@@ -1569,6 +1580,12 @@ graceful-fs@^4.1.2:
   version "1.0.1"
   resolved "https://artifactory.palantir.build:443/artifactory/api/npm/all-npm/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
 
+graphlib@^1.0.5:
+  version "1.0.7"
+  resolved "https://artifactory.palantir.build:443/artifactory/api/npm/all-npm/graphlib/-/graphlib-1.0.7.tgz#0cab2df0ffe6abe070b2625bfa1edb6ec967b8b1"
+  dependencies:
+    lodash "^3.10.0"
+
 har-validator@~2.0.6:
   version "2.0.6"
   resolved "https://artifactory.palantir.build:443/artifactory/api/npm/all-npm/har-validator/-/har-validator-2.0.6.tgz#cdcbc08188265ad119b6a5a7c8ab70eecfb5d27d"
@@ -2008,6 +2025,10 @@ loader-utils@^0.2.11, loader-utils@^0.2.16, loader-utils@^0.2.2, loader-utils@^0
     json5 "^0.5.0"
     object-assign "^4.0.1"
 
+lodash, lodash@^4.16.4, lodash@^4.17.2, lodash@^4.2.0:
+  version "4.17.3"
+  resolved "https://artifactory.palantir.build:443/artifactory/api/npm/all-npm/lodash/-/lodash-4.17.3.tgz#557ed7d2a9438cac5fd5a43043ca60cb455e01f7"
+
 lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://artifactory.palantir.build:443/artifactory/api/npm/all-npm/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
@@ -2016,9 +2037,9 @@ lodash.indexof@^4.0.5:
   version "4.0.5"
   resolved "https://artifactory.palantir.build:443/artifactory/api/npm/all-npm/lodash.indexof/-/lodash.indexof-4.0.5.tgz#53714adc2cddd6ed87638f893aa9b6c24e31ef3c"
 
-lodash@^4.16.4, lodash@^4.17.2, lodash@^4.2.0:
-  version "4.17.3"
-  resolved "https://artifactory.palantir.build:443/artifactory/api/npm/all-npm/lodash/-/lodash-4.17.3.tgz#557ed7d2a9438cac5fd5a43043ca60cb455e01f7"
+lodash@^3.10.0:
+  version "3.10.1"
+  resolved "https://artifactory.palantir.build:443/artifactory/api/npm/all-npm/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
 longest@^1.0.1:
   version "1.0.1"

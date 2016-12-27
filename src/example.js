@@ -1,4 +1,13 @@
 /* @flow */
+
+export const EXAMPLE_SMALL: Array<string> = [
+"genunix`open 17",
+"genunix`post_syscall 12",
+"genunix`syscall_mstate 89",
+"unix`0xfffffffffb8001d6;unix`trap;unix`pagefault;genunix`as_fault 1",
+"unix`0xfffffffffb8001d6;unix`trap;unix`pagefault;genunix`as_fault;genunix`segvn_fault;genunix`fop_getpage;ufs`ufs_getpage;unix`page_lookup;unix`page_lookup_create 1",
+];
+
 export const EXAMPLE: Array<string> = [
 "genunix`open 17",
 "genunix`post_syscall 12",

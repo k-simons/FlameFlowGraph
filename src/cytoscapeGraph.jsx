@@ -4,7 +4,9 @@
 // @flow
 import * as React from "react";
 import cytoscape from 'cytoscape'
-import { Edge, Node } from "./graphUtils"
+import cydagre from 'cytoscape-dagre';
+import dagre from 'dagre';
+import { generateNodes } from "./graphUtils"
 
 type CytoscapeGraphProps = {
     
@@ -19,50 +21,46 @@ export class CytoscapeGraph extends React.Component {
     }
 
     componentDidMount() {
+        cydagre( cytoscape, dagre )
         const cy = cytoscape({
             container: document.getElementById('graph-body'),
             elements: getElements(),
+            layout: {
+				name: 'dagre'
+			},
             style: [
                 {
                     selector: 'node',
                     style: {
                         'background-color': 'red',
-                        'width': 10,
-                        'height': 40
+                        'width': getSize,
+                        'height': getSize
+                    }
+                },
+                {
+                    selector: 'edge',
+                    style: {
+                        'width': 4,
+                        'target-arrow-shape': 'triangle',
+                        'line-color': '#9dbaea',
+                        'target-arrow-color': '#9dbaea',
+                        'curve-style': 'bezier'
                     }
                 }
             ]
         });
     }
+}
 
+function getSize(n) {
+    return n.data().size
 }
 
 function getElements() {
-    const rawData = getNodes().concat(getEdges())
+    const rawData = generateNodes()
     return rawData.map(rawDatum => {
         return {
             data: rawDatum
         }
     })
-}
-
-function getNodes(): Array<Node> {
-    return [
-        {
-            id: 'a'
-        },
-        {
-            id: 'b'
-        },
-    ]
-}
-
-function getEdges(): Array<Edge> {
-    return [
-        {
-            id: 'ab',
-            source: 'a',
-            target: 'b',
-        }
-    ]
 }
