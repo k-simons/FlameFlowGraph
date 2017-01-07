@@ -4,6 +4,7 @@ import * as _ from "lodash";
 
 export type Node = {
     id: string;
+    name: string;
     size: number;
 };
 
@@ -18,13 +19,35 @@ type Sample = {
     timeTaken: number;
 };
 
+type FullGraph = {
+    nodes: Array<Node>;
+    edges: Array<Edge>;
+}
 
 export function generateNodes() {
+    const cutoff = 20;
+    const graph = generateAllNodes()
+    const nodesRemoved = {}
+    const nodes = graph.nodes.filter(node => {
+        const stillInGraph = node.size > cutoff;
+        if (!stillInGraph) {
+            nodesRemoved[node.id] = true;
+        }
+        return stillInGraph;
+    })
+    const edges = graph.edges.filter(edge => {
+        const removed = _.has(nodesRemoved, edge.source) || _.has(nodesRemoved, edge.target)
+        return !removed;
+    })
+    return nodes.concat(edges)
+}
+
+function generateAllNodes(): FullGraph {
     const samples = generateSamples();
     const nodesSeen = {}
     const edgesSeen = {};
     const edges: Array<Edge> = [];
-    const finalNodes: Array<Node> = [];
+    const nodes: Array<Node> = [];
     for (const sample of samples) {
         for (let i = 0; i < sample.path.length; i++) {
             const path = sample.path[i];
@@ -50,16 +73,17 @@ export function generateNodes() {
         nodesSeen[functionName] = nodesSeen[functionName] + sample.timeTaken
     }
     for (const key of _.keys(nodesSeen)) {
-        finalNodes.push({
+        nodes.push({
             id: key,
+            name: key,
             size: nodesSeen[key]
         })
     }
-    console.log(edges.length)
-    console.log(edges)
-    console.log(finalNodes.length)
-    console.log(finalNodes)
-    return finalNodes.concat(edges)
+    // console.log(edges.length)
+    // console.log(edges)
+    // console.log(finalNodes.length)
+    // console.log(finalNodes)
+    return { edges, nodes }
 }
 
 function generateSamples(): Array<Sample> {
